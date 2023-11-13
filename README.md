@@ -1,6 +1,6 @@
 # Blockchain Messaging Service
 
-Welcome to the Blockchain Messaging Service! This project implements a decentralized messaging system on a blockchain, ensuring secure and tamper-proof communication. Below is an in-depth guide to understanding the architecture and inner workings of this messaging service.
+Here is the Blockchain Messaging Service! This project implements a decentralized messaging system on a blockchain, ensuring secure and tamper-proof communication. Below is an in-depth guide to understanding the architecture and inner workings of what this messaging service is to become. Some of what is here is already in place, and there are still a few of these features that we are adding. 
 
 ## Architecture Overview
 
@@ -44,10 +44,6 @@ Welcome to the Blockchain Messaging Service! This project implements a decentral
 
 - **Mining:** Nodes, often referred to as miners, engage in solving complex mathematical problems to propose new blocks. The first node to solve it earns the right to add the block to the blockchain.
 
-### Smart Contracts (Optional)
-
-- **Additional Functionality:** For added complexity, smart contracts can be implemented. These contracts introduce features like decentralized storage, automated actions, or conditional messaging.
-
 ## Additional Considerations
 
 - **Scalability:** Plans for scalability involve mechanisms like sharding or sidechains. These ensure that the system can handle an increasing number of transactions without sacrificing efficiency.
@@ -55,10 +51,6 @@ Welcome to the Blockchain Messaging Service! This project implements a decentral
 - **User Identity:** Managing user identity on the blockchain involves defining how keys are associated with user accounts. This ensures the security and privacy of users.
 
 - **Incentives:** To encourage node participation in the network, economic incentives such as transaction fees or block rewards can be implemented.
-
-## Contributing
-
-We enthusiastically welcome contributions from the community. If you have ideas for improvements or discover issues, please open an issue or submit a pull request.
 
 ## License
 
