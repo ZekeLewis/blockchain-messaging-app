@@ -1,7 +1,7 @@
 # p2p.py
 import requests
 from apscheduler.schedulers.background import BackgroundScheduler
-from blockchain_2.block_chain import Chain, Block, create_new_block_from_prev
+from block_chain import Chain, Block, create_new_block_from_prev
 from config import *
 
 

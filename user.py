@@ -8,7 +8,6 @@ from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.exceptions import InvalidSignature
 from message import Message
 from config import *
-from cli import interact_with_blockchain
 
 class UserNode:
     def __init__(self, port, user_id):
@@ -16,6 +15,7 @@ class UserNode:
         self.user_id = user_id
         self.key_file = f"user_{user_id}_keys.pem"
         self.peers = []
+        self.num_stars = 0 #user gets stars for mining blocks
 
         if os.path.exists(self.key_file):
             self.private_key, self.public_key = self.load_keys_from_file()
@@ -76,6 +76,10 @@ class UserNode:
             return True
         except InvalidSignature:
             return False
+        
+    def award_star(self):
+        self.num_stars += 1
+        print(f"User {self.user_id} now has {self.num_stars} stars!")
 
     def connect_to_peers(self, peers):
         #this function is still incomplete
@@ -84,11 +88,12 @@ class UserNode:
             self.peers.append(peer)
 
         
-
 def run_node(port, user_id, action):
+    #had to keep this import here to prevent errors without refactoring the entire code
+    from cli import interact_with_blockchain
     user_node = UserNode(port, user_id)
-    user_node.connect_to_peers(PEERS)
-    interact_with_blockchain(action, user_id)
+    user_node.connect_to_peers(PEERS) #needs to create a local instance from peers syncing the blockchain
+    interact_with_blockchain(action, user_id, port)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Blockchain Node")
